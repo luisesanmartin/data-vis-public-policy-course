@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 250px;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+</style>
+
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="">Home</a>
+  <p> </p>
+  <p> </p>
+  <a href="care/">CARE International</a>
+  <a href="charity_water/">Charity: Water</a>
+  <a href="msf/">Doctors without Borders</a>
+  <a href="ipa/">Innovations for Poverty Action</a>
+</div>
+
+<div class="main">
+  <h1>Lima</h1>
+  <p><i>By Luis Eduardo San Martin</i></p>
+  <p>Intro text here</p>
+  
+  <h3>Compound score</h3>
+  <div id="vis"></div>
+  
+  <script>
+    const spec = "outputs/1-zones_population.json";
+    vegaEmbed("#vis", spec)
+      // result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text</p>
+
+  <h3>Correlations</h3>
+  <p>Text here</p>
+
+</div>
+   
+</body>
+</html> 
