@@ -88,25 +88,25 @@ body {
   <div id="vis_population"></div>
   
   <script>
-    const spec = "outputs/1-zones_population.json";
-    vegaEmbed("#vis_population", spec)
+    const spec1 = "outputs/1-zones_population.json";
+    vegaEmbed("#vis_population", spec1)
       // result.view provides access to the Vega View API
       .then(result => console.log(result))
       .catch(console.warn);
   </script>
 
-  <p>Text</p>
-
+  <p>With the clear exception of South Beach, every zone in this classification has a population of at least one million people, approximately. North Lima is the zone with the most population, with more than 2 million. The distribution of the block groups shows that most of the zones have areas with zero population, like the north of North Lima, the east of South Lima or almost every part but the coast of South beach. Additionally, the block groups signal road connectivity between different parts of the city. Noticeably, some zones suffer from lack of road connectivity between them in spite of being geographically close, like the central part of North Lima and the north of San Juan de Lurigancho.</p>
 
 
   <h3 id="access_water">2 - Types of access to water by zones</h3>
   <div id="vis_access_water"></div>
   
-  <script type="text/javascript">
-    var spec = "outputs/2-zones_access_to_water_2018.json";
-    vegaEmbed('#vis', spec).then(function(result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
+  <script>
+    const spec2 = "outputs/outputs/2-zones_access_to_water_2018.json";
+    vegaEmbed("#vis_population", spec2)
+      // result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
   </script>
 
   <p>Text here</p>
@@ -117,8 +117,8 @@ body {
   <div id="vis_access_water_trends"></div>
   
   <script>
-    const spec = "outputs/3-trends_access_to_water_2014-2018.json";
-    vegaEmbed("#vis_access_water_trends", spec)
+    const spec3 = "outputs/3-trends_access_to_water_2014-2018.json";
+    vegaEmbed("#vis_access_water_trends", spec3)
       // result.view provides access to the Vega View API
       .then(result => console.log(result))
       .catch(console.warn);
@@ -132,8 +132,8 @@ body {
   <div id="vis_formal_jobs"></div>
   
   <script>
-    const spec = "outputs/4-zones_formal_jobs_2018.json";
-    vegaEmbed("#vis_formal_jobs", spec)
+    const spec4 = "outputs/4-zones_formal_jobs_2018.json";
+    vegaEmbed("#vis_formal_jobs", spec4)
       .then(result => console.log(result))
       .catch(console.warn);
   </script>
@@ -155,8 +155,8 @@ body {
   <div id="vis_bad_dwellings"></div>
   
   <script>
-    const spec = "outputs/6-districts_dwellings_in_bad_condition_2018.json";
-    vegaEmbed("#vis_bad_dwellings", spec)
+    const spec6 = "outputs/6-districts_dwellings_in_bad_condition_2018.json";
+    vegaEmbed("#vis_bad_dwellings", spec6)
       .then(result => console.log(result))
       .catch(console.warn);
   </script>
@@ -169,8 +169,8 @@ body {
   <div id="vis_poverty_rate"></div>
   
   <script>
-    const spec = "outputs/7-districts_poverty_rates_2018.json";
-    vegaEmbed("#vis_poverty_rate", spec)
+    const spec7 = "outputs/7-districts_poverty_rates_2018.json";
+    vegaEmbed("#vis_poverty_rate", spec7)
       .then(result => console.log(result))
       .catch(console.warn);
   </script>
@@ -183,8 +183,8 @@ body {
   <div id="vis_poverty_absolute"></div>
   
   <script>
-    const spec = "outputs/8-districts_absolute_poverty_2018.json";
-    vegaEmbed("#vis_poverty_absolute", spec)
+    const spec8 = "outputs/8-districts_absolute_poverty_2018.json";
+    vegaEmbed("#vis_poverty_absolute", spec8)
       .then(result => console.log(result))
       .catch(console.warn);
   </script>
