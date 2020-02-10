@@ -98,12 +98,11 @@ body {
   <h3 id="access_water">2 - Types of access to water by zones</h3>
   <div id="vis_access_water"></div>
   
-  <script>
-    const spec = "outputs/2-zones_access_to_water_2018.json";
-    vegaEmbed("#vis_access_water", spec)
-      // result.view provides access to the Vega View API
-      .then(result => console.log(result))
-      .catch(console.warn);
+  <script type="text/javascript">
+    var spec = "outputs/2-zones_access_to_water_2018.json";
+    vegaEmbed('#vis', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
   </script>
 
   <p>Text here</p>
