@@ -65,10 +65,14 @@ body {
   <a href="">Home</a>
   <p> </p>
   <p> </p>
-  <a href="#vis_population">1 - Introducing my classification of Lima</a>
-  <a href="charity_water/">Charity: Water</a>
-  <a href="msf/">Doctors without Borders</a>
-  <a href="ipa/">Innovations for Poverty Action</a>
+  <a href="#population">1 - Introducing my classification of Lima</a>
+  <a href="access_water">2 - Types of access to water by zones</a>
+  <a href="access_water_trends">3 - Evolution of the access to piped water by zones</a>
+  <a href="formal_jobs">4 - Access to formal jobs by zones</a>
+  <a href="schools_quality">5 - Distribution of the quality of public primary schools by zones</a>
+  <a href="bad_dwellings">6 - Dwellings in bad condition by district</a>
+  <a href="poverty_rate">7 - Poverty rates by district</a>
+  <a href="poverty_absolute">8 - Population living in poverty by district</a>  
 </div>
 
 <div class="main">
@@ -76,9 +80,9 @@ body {
   <p><i>By Luis Eduardo San Martin</i></p>
   <p>Intro text here</p>
   
+  <h3 id="population">1 - Introducing my classification of Lima</h3>
   <div id="vis_population">
-  <h3>1 - Introducing my classification of Lima</h3>
-
+  
   <script>
     const spec = "outputs/1-zones_population.json";
     vegaEmbed("#vis_population", spec)
@@ -88,6 +92,103 @@ body {
   </script>
 
   <p>Text</p>
+  </div>
+
+
+  <h3 id="access_water">2 - Types of access to water by zones</h3>
+
+  <div id="vis_access_water">
+  
+  <script>
+    const spec = "outputs/2-zones_access_to_water_2018.json";
+    vegaEmbed("#vis_access_water", spec)
+      // result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="access_water_trends">3 - Evolution of the access to piped water by zones</h3>
+
+  <div id="vis_access_water_trends">
+  
+  <script>
+    const spec = "outputs/3-trends_access_to_water_2014-2018.json";
+    vegaEmbed("#vis_access_water_trends", spec)
+      // result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="formal_jobs">4 - Access to formal jobs by zones</h3>
+
+  <div id="vis_formal_jobs">
+  
+  <script>
+    const spec = "outputs/4-zones_formal_jobs_2018.json";
+    vegaEmbed("#vis_formal_jobs", spec)
+      // result.view provides access to the Vega View API
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="schools_quality">5 - Distribution of the quality of public primary schools by zones</h3>
+
+  <div id="vis_schools_quality">
+
+  <img src="outputs/5-zones_public_primary_quality_hc.png">
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="bad_dwellings">6 - Dwellings in bad condition by district</h3>
+
+  <div id="vis_bad_dwellings">
+  
+  <script>
+    const spec = "outputs/6-districts_dwellings_in_bad_condition_2018.json";
+    vegaEmbed("#vis_bad_dwellings", spec)
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="poverty_rate">7 - Poverty rates by district</h3>
+
+  <div id="vis_poverty_rate">
+  
+  <script>
+    const spec = "outputs/7-districts_poverty_rates_2018.json";
+    vegaEmbed("#vis_poverty_rate", spec)
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
+  </div>
+
+  <h3 id="poverty_absolute">8 - Population living in poverty by district</h3>
+
+  <div id="vis_poverty_absolute">
+  
+  <script>
+    const spec = "outputs/8-districts_absolute_poverty_2018.json";
+    vegaEmbed("#vis_poverty_absolute", spec)
+      .then(result => console.log(result))
+      .catch(console.warn);
+  </script>
+
+  <p>Text here</p>
   </div>
 
 </div>
