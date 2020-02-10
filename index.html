@@ -78,12 +78,13 @@ body {
 <div class="main">
   <h1 id="home">A tale of one city: exploring the inequalities of Lima</h1>
   <p><i>By Luis Eduardo San Martin</i></p>
-  <p>This work explores multiple aspects of the inequalities of Lima, the capital of Peru.</p>
+  <p>This work explores multiple aspects of the inequalities of Lima, the capital of Peru, and presents them using eight different visualizations.</p>
+  <p>I invite any curious reader to explore my data preparation <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/tree/master/notebooks/cleaning">here</a> and my code for producing the graphics <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/tree/master/notebooks/analysis">here</a>.
   
   <h3 id="population">1 - Introducing my classification of Lima</h3>
   <p>My first plot serves the purpose of introducing the unfamiliar reader with the city of Lima.</p>
   <p>With more than 10 million people and a regulation that forbids the construction of skyscrappers due to the risk of earthquakes, Lima is huge in inhabitants and gigantic in extension. Bounded between the South Pacific Ocean to the West and the beginning of the Andes mountains to the East, it has a weird shape.</p>
-  <p>This first plot consists of a map of the city of Lima using an aggregation of districts (the administrative division of Lima Metropolitana) into eight distinct groups defined by me. Though this grouping is ultimately arbitrary, it tries to follow a criteria of geographic proximity and road accessibility intra group.</p>
+  <p>This first plot consists of a map of the city of Lima using an aggregation of districts (the administrative division of Lima Metropolitana) into eight distinct groups defined by me. Though this grouping is ultimately arbitrary, it follows a criteria of geographic proximity and road accessibility intra group.</p>
   <p>This is my classification of the city:</p>
   <ul>
     <li>North Lima</li>
@@ -107,11 +108,11 @@ body {
       .catch(console.warn);
   </script>
 
-  <p>With the clear exception of South Beach, every zone in this classification has a population of at least one million people, approximately. North Lima is the zone with the most population, with more than 2 million. The distribution of the block groups shows that most of the zones have areas with zero population, like the north of North Lima, the east of South Lima or almost every part but the coast of South beach. Additionally, the block groups signal road connectivity between different parts of the city. Noticeably, some zones suffer from lack of road connectivity between them in spite of being geographically close, like the central part of North Lima and the north of San Juan de Lurigancho.</p>
+  <p>With the clear exception of South Beach, every zone in this classification has a population of at least one million people, approximately. North Lima is the zone with the most population, with more than 2 million. The distribution of the block groups shows that several of the zones have areas with zero population, like the north of North Lima, the east of South Lima or almost every part but the coast of South beach. Additionally, the block groups signal road connectivity between different parts of the city. Noticeably, some zones suffer from lack of road connectivity between them in spite of being geographically close, like the central part of North Lima and the north of San Juan de Lurigancho. Additionally, almost every part in the High income and Old town zones are well-connected to its surrounding areas.</p>
 
 
   <h3 id="access_water">2 - Types of access to water by zones</h3>
-  <p>I chose this as one of my chosen indicators to show the inequities of Lima because extending the network of piped water in the city poses a series of tremendous challenges for its great geographic extension, topographic variation, scarce availability of natural water resources and the corruption of the water provider, among others.</p>
+  <p>I chose this as one of my first indicator to show the inequities of Lima because extending the network of piped water in the city poses a series of tremendous challenges for its great geographic extension, topographic variation, scarce availability of natural water resources and the corruption of the water provider, among others.</p>
   <div id="vis_access_water"></div>
   
   <script>
@@ -122,11 +123,11 @@ body {
       .catch(console.warn);
   </script>
 
-  <p>Except for Sout Beach, there is not a stark contrast between each zone in the proportion of population with access to piped water inside the house. High Income Lima reaches a proportion of more than 0.95, buth the Port, South Lima and the Old Town are also above 0.9. South Beach is clearly an outlier in this, and a reason for that might be the expansion of and seasonal, unfinished middle-class beach houses and informal settlements in this area of the city. In general, there is not a big inequality in this indicator among different zones of Lima.</p>
+  <p>Except for Sout Beach, there is not a stark contrast between each zone in the proportion of population with access to piped water inside the house. High Income Lima reaches a percentage of more than 95%, buth the Port, South Lima and the Old Town are also above 90%. South Beach is clearly an outlier in this, and a reason for that might be the expansion of and seasonal, unfinished middle-class beach houses and informal settlements in this area of the city. In general, there is not a big inequality in this indicator among different zones of Lima.</p>
   
 
   <h3 id="access_water_trends">3 - Evolution of the access to piped water by zones</h3>
-  <p>I will continue by exploring the evolution of the access to piped water inside the house, the highest quality type of access to water. I will keep using the access to water dataframe, where every observation is a combination of year and zone, and the proportion of population that has a certain type of access to water is conveniently stored in separated columns.</p>
+  <p>I will continue by exploring the evolution of the access to piped water inside the house, the highest quality type of access to water. I will keep using the access to water dataframe, where every observation is a combination of year and zone, and the proportion of population that has a certain type of access to water is conveniently stored in separated columns. Finally, I clarify that I will leave the zone "South beach" out of this visualization because it is clearly an outlier in this variable.</p>
 
   <div id="vis_access_water_trends"></div>
   
@@ -142,13 +143,12 @@ body {
   
 
   <h3 id="formal_jobs">4 - Access to formal jobs by zones</h3>
-  <p>Leaving access to water behind, now I will analyze the access to formal jobs. Specifically, I will compare how the whole population of Lima is distributed by zone with how the whole population of people with formal jobs is distributed by zone.</p>
+  <p>Leaving access to water behind, now I will analyze the access to formal jobs. Specifically, I will compare how the working age population of Lima is distributed by zone with how the employed population and population with formal jobs are distributed by zone.</p>
   <p>The Peruvian government does not have a precise definition of formal jobs, and most approaches usually rely on if a worker is affiliated to a retirement fund and on if she has some kind of health provision plan. Specifically, my definition of formal job is the following:</p>
   <ul>
     <li>The worker is affiliated to a retirement plan.</li>
     <li>The worker is affiliated to at least one these types of health provision: the general health provider for workers, a private health provider, or the police/military health provider.</li>
   </ul>
-  <p>The data wranging part for the dataframe I will use for this visualization is <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/blob/master/notebooks/cleaning/4_arranging%20the%20ENAHO%20data_formal%20jobs.ipynb">here</a>. The raw data comes from the health, labor and summary modules of the 2018 National Household Survey, collected and published by INEI.</p>
 
   <div id="vis_formal_jobs"></div>
   
@@ -159,12 +159,11 @@ body {
       .catch(console.warn);
   </script>
 
-  <p>Except for Old Town and North Lima, the graph does not show salient differences betwen the proportion of population considered in both indicators. More importantly, it is noticeable that the proportion of population from High Income Lima is lower among the population with formal jobs than among the whole population. This is a completely unexpected result, and possibly an indicator that my classification of High Income Lima is not as high income as I thought, or that my criteria for formal jobs (which I expected to be correlated with wealth) needs to be more strict./p>
+  <p>The graph shows clearly that in spite of not being the area with the most population in working age nor the area with the greatest number of people employed, high income Lima is the area with the highest number of people with formal jobs. North Lima, on the contrary, has the highest number of people in working age and with an employment, but the number of formal workers it has is just above the number of formal workers of the old town, which has a clearly lower population in working age. East Lima, the port, SJL and south Lima also have a low number of formally employed workers.</p>
   
 
   <h3 id="schools_quality">5 - Distribution of the quality of public primary schools by zones</h3>
   <p>The next inequality I will explore is the quality of public primary schools by zone. To show this, I will use the results of the last National Evaluation of Students as a proxy for school quality. Though I initially used a Stripplot for this, I finally decided to present a Swarmplot along with a Violin plot to show the distribution by zone of the average result by school of the National Students Evaluation for the second year of primary, for all public schools in Lima. The National Students Evaluation was a standardized test conducted by the Ministry of Education of Peru to track the progress of the students' learnings year by year. It was discontinued after 2016 and replaced by a sampled evaluation instead of a nationwide one.</p>
-  <p>The dataframe schools was prepared in <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/blob/master/notebooks/cleaning/2_cleaning%20IE%202P%20ECE%2016_Lima.ipynb">this notebook</a>. As mentioned before, its raw data comes from a request of access to public information I conducted in-person with the Ministry of Education of Peru. Every row in the dataframe is a public primary school in Lima Metropolitana, and the list is complete. The columns contain the average result in math for second grade of primary, the zone where the school is, and some additional school identificators (name, school ID and others).</p>
 
   <div id="vis_schools_quality"></div>
 
@@ -223,7 +222,7 @@ body {
       .catch(console.warn);
   </script>
 
-  <p>Text here</p>
+  <p>Finally, this last plot shows clearly that the districts of high income Lima have a very small number of people living in poverty, and that this is much lower than the districts in the other areas of the city.</p>
   
 
 </div>
