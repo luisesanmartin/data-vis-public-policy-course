@@ -1,2 +1,2 @@
-# data-vis-public-policy-course
-Code and outputs for my Data Visualization for Public Policy course, at the UChicago CAPP program
+# lima-inequalities-static
+Code and outputs for my static data visualizations of the inequalities in Lima. This content was produced as part of my course Visualization for Public Policy, at the UChicago CAPP program.
