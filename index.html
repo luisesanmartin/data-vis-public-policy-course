@@ -54,9 +54,9 @@ body {
 </style>
 
   <meta charset="utf-8">
-  <script type="javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <script type="javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 </head>
 <body>
@@ -72,7 +72,7 @@ body {
   <a href="#schools_quality">5 - Distribution of the quality of public primary schools by zones</a>
   <a href="#bad_dwellings">6 - Dwellings in bad condition by district</a>
   <a href="#poverty_rate">7 - Poverty rates by district</a>
-  <a href="#poverty_absolute">8 - Population living in poverty by district</a>
+  <a href="#poverty_absolute">8 - Population living in poverty by district</a>  
 </div>
 
 <div class="main">
@@ -80,7 +80,7 @@ body {
   <p><i>By Luis Eduardo San Martin</i></p>
   <p>This work explores multiple aspects of the inequalities of Lima, the capital of Peru, and presents them using eight different visualizations.</p>
   <p>I invite any curious reader to explore my data preparation <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/tree/master/notebooks/cleaning">here</a> and my code for producing the graphics <a href="https://github.com/luisesanmartin/data-vis-public-policy-course/tree/master/notebooks/analysis">here</a>.
-
+  
   <h3 id="population">1 - Introducing my classification of Lima</h3>
   <p>My first plot serves the purpose of introducing the unfamiliar reader with the city of Lima.</p>
   <p>With more than 10 million people and a regulation that forbids the construction of skyscrappers due to the risk of earthquakes, Lima is huge in inhabitants and gigantic in extension. Bounded between the South Pacific Ocean to the West and the beginning of the Andes mountains to the East, it has a weird shape.</p>
@@ -99,7 +99,7 @@ body {
   <p>From now on, these areas will be called zones.</p>
   <p>Additionally, I will also include in this plot the polygon lines of the block groups of the city. With this, the viewer can have a better idea of how the population of each zone is spatially distributed.</p>
   <div id="vis_population"></div>
-
+  
   <script>
     const spec1 = "outputs/1-zones_population.json";
     vegaEmbed("#vis_population", spec1)
@@ -114,7 +114,7 @@ body {
   <h3 id="access_water">2 - Types of access to water by zones</h3>
   <p>I chose this as one of my first indicator to show the inequities of Lima because extending the network of piped water in the city poses a series of tremendous challenges for its great geographic extension, topographic variation, scarce availability of natural water resources and the corruption of the water provider, among others.</p>
   <div id="vis_access_water"></div>
-
+  
   <script>
     const spec2 = "outputs/2-zones_access_to_water_2018.json";
     vegaEmbed("#vis_access_water", spec2)
@@ -124,13 +124,13 @@ body {
   </script>
 
   <p>Except for Sout Beach, there is not a stark contrast between each zone in the proportion of population with access to piped water inside the house. High Income Lima reaches a percentage of more than 95%, buth the Port, South Lima and the Old Town are also above 90%. South Beach is clearly an outlier in this, and a reason for that might be the expansion of and seasonal, unfinished middle-class beach houses and informal settlements in this area of the city. In general, there is not a big inequality in this indicator among different zones of Lima.</p>
-
+  
 
   <h3 id="access_water_trends">3 - Evolution of the access to piped water by zones</h3>
   <p>I will continue by exploring the evolution of the access to piped water inside the house, the highest quality type of access to water. I will keep using the access to water dataframe, where every observation is a combination of year and zone, and the proportion of population that has a certain type of access to water is conveniently stored in separated columns. Finally, I clarify that I will leave the zone "South beach" out of this visualization because it is clearly an outlier in this variable.</p>
 
   <div id="vis_access_water_trends"></div>
-
+  
   <script>
     const spec3 = "outputs/3-trends_access_to_water_2014-2018.json";
     vegaEmbed("#vis_access_water_trends", spec3)
@@ -140,7 +140,7 @@ body {
   </script>
 
   <p>The last five years of available data do not show a clear trend in the increase of access to piped water by zone Lima, though in the last year (2018) all areas increased it. Also importantly, this visualization does not bring evidence of a clear diverging trend by zone that could exacerbate existing inequalities (with the slight exception of South Beach, not included in this graph). All things considered, it seems that access to water is not highly unequal among these zones in Lima.</p>
-
+  
 
   <h3 id="formal_jobs">4 - Access to formal jobs by zones</h3>
   <p>Leaving access to water behind, now I will analyze the access to formal jobs. Specifically, I will compare how the working age population of Lima is distributed by zone with how the employed population and population with formal jobs are distributed by zone.</p>
@@ -151,7 +151,7 @@ body {
   </ul>
 
   <div id="vis_formal_jobs"></div>
-
+  
   <script>
     const spec4 = "outputs/4-zones_formal_jobs_2018.json";
     vegaEmbed("#vis_formal_jobs", spec4)
@@ -160,7 +160,7 @@ body {
   </script>
 
   <p>The graph shows clearly that in spite of not being the area with the most population in working age nor the area with the greatest number of people employed, high income Lima is the area with the highest number of people with formal jobs. North Lima, on the contrary, has the highest number of people in working age and with an employment, but the number of formal workers it has is just above the number of formal workers of the old town, which has a clearly lower population in working age. East Lima, the port, SJL and south Lima also have a low number of formally employed workers.</p>
-
+  
 
   <h3 id="schools_quality">5 - Distribution of the quality of public primary schools by zones</h3>
   <p>The next inequality I will explore is the quality of public primary schools by zone. To show this, I will use the results of the last National Evaluation of Students as a proxy for school quality. Though I initially used a Stripplot for this, I finally decided to present a Swarmplot along with a Violin plot to show the distribution by zone of the average result by school of the National Students Evaluation for the second year of primary, for all public schools in Lima. The National Students Evaluation was a standardized test conducted by the Ministry of Education of Peru to track the progress of the students' learnings year by year. It was discontinued after 2016 and replaced by a sampled evaluation instead of a nationwide one.</p>
@@ -170,7 +170,7 @@ body {
   <img src="outputs/5-zones_public_primary_quality_hc.png">
 
   <p>The graph shows that the number of public schools in South Beach is very low, and that North Lima has a higher number of public schools than all the other zones. Regarding the distribution of results, the plot shows that the Port has the highest median of average test scores, followed by the High Income and East zones. Apart from having the higher number of public primary schools, North Lima also displays the highest average score variability within zone.</p>
-
+  
 
   <h3 id="bad_dwellings">6 - Dwellings in bad condition by district</h3>
   <p>My last three plots will be geospatial visualizations at the district level, while also showing the zones division I have been using for Lima Metropolitana. The data for these visualizations come from the National Households Survey (ENAHO). As ENAHO data for one year does not have a sufficient number of observations to conduct inference at the district level, I will pool the data for the years 2016-2018 to have a sufficient number of observations for estimating district-level indicators. Thus, the plots I will show will correspond to district averages for the period 2016-2018. Additionally, these plots will exclude the South Beach zone because the number of observations for the districts in this zone is not enough for producing reliable indicators, not even after pooling the ENAHO data in the three years.</p>
@@ -185,7 +185,7 @@ body {
   <p>It is worth to note that INEI's definition of inadequate dwelling takes into account having any of the first two characteristics mentioned. My proposed definition of dwelling in bad condition expands this notion by also take into account adequate access to water and sanitation, and if the dwelling is overcrowded.</p>
 
   <div id="vis_bad_dwellings"></div>
-
+  
   <script>
     const spec6 = "outputs/6-districts_dwellings_in_bad_condition_2018.json";
     vegaEmbed("#vis_bad_dwellings", spec6)
@@ -194,12 +194,12 @@ body {
   </script>
 
   <p>The map shows a correspondence between districts in High Income Lima and lower rates of dwellings in bad condition. Additionally, it is also salient that districts outside of the High Income zone but closest to it also have a lower proportion of dewllings in bad condition. This is especially noticeable for the districts in the south side of North Lima and the Port, as well as in the east of South Lima.</p>
-
+  
   <h3 id="poverty_rate">7 - Poverty rates by district</h3>
   <p>Finally, my last two visualizations seek to sum up this work by showing the final result and root of all the inequalities previously shown. First, we have this map of the poverty rates by districts in Lima.</p>
 
   <div id="vis_poverty_rate"></div>
-
+  
   <script>
     const spec7 = "outputs/7-districts_poverty_rates_2018.json";
     vegaEmbed("#vis_poverty_rate", spec7)
@@ -208,13 +208,13 @@ body {
   </script>
 
   <p>The map shows a correlation between being part of the High Income zone and having lower poverty rates. Also noticeably is the clustering of districts with lower poverty rates in the areas close to the north boundary of High Income Lima, in the South of the Port and North Lima, and the east of Old Town. The geospatial patterns shown in the dwellings in bad condition plot are very close to the ones resembled in this map.</p>
-
+  
 
   <h3 id="poverty_absolute">8 - Population living in poverty by district</h3>
   <p>Finally, this last map shows the absolute number of people living in poverty in Lima</p>
 
   <div id="vis_poverty_absolute"></div>
-
+  
   <script>
     const spec8 = "outputs/8-districts_absolute_poverty_2018.json";
     vegaEmbed("#vis_poverty_absolute", spec8)
@@ -223,9 +223,9 @@ body {
   </script>
 
   <p>Finally, this last plot shows clearly that the districts of high income Lima have a very small number of people living in poverty, and that this is much lower than the districts in the other areas of the city.</p>
-
+  
 
 </div>
-
+   
 </body>
-</html>
+</html> 
